@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.header__row {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__item {
+    margin-left: 20px;
+}
+
+.header__item_main {
+    font-size: 20px;
+}
+
+.page-description {
+    text-align: center;
+}
+
+.page-description__title {
+    margin-top: 20px;
+    font-size: 36px;
+}
+
+.page-description__subtitle {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.add-player {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.add-player__form {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+}
+
+.add-player__form-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.add-player__form-surname {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.add-player__form-gender {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.add-player__form-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.add-player__form-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.add-player__form-team-button {
+    align-self: flex-end;
+}
+
+.add-player__form-country {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.add-player__form-submit {
+    margin-top: 15px;
+}
+
+.players-container {
+    width: 100%;
+    margin-top: 10px;
+    padding: 30px 100px;
+}
+
+.players-container__table {
+    width: 100%;
+    border-spacing: 0;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    word-wrap: break-word;
+    table-layout: fixed;
+}
+
+.players-container__table-header {
+    border-left: 1px solid;
+    border-top: 1px solid;
+}
+
+.players-container__table-data {
+    border-left: 1px solid;
+    border-top: 1px solid;
+}
+
+.footer {
+    border: 1px solid #DCDCDC;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer__row {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer__item {
+    margin-left: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    height: 100vh;
+}

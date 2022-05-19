@@ -1,0 +1,73 @@
+﻿@using FootballPlayers.ViewModels
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model EditPlayerViewModel
+
+<div class="page-description">
+    <div class="page-description__title">
+        Редактирование футболиста
+    </div>
+</div>
+<div class="add-player">
+    <form class="add-player__form" method="post">
+        <div class="add-player__form-name">
+            <div>Имя:</div>
+            <input type="text" asp-for=Name required placeholder="Введите имя.."/>
+        </div>
+        <div class="add-player__form-surname">
+            <div>Фамилия:</div>
+            <input type="text" asp-for=Surname required placeholder="Введите фамилию.."/>
+        </div>
+        <div class="add-player__form-gender">
+            <div>Пол:</div>
+            <div>
+                @{
+                    if (Model.Gender == "Мужской")
+                    {
+                        <div>
+                            <input type="radio" asp-for=Gender required name="gender" value="Мужской" checked /> Мужской
+                            <input type="radio" asp-for=Gender required name="gender" value="Женский" /> Женский
+                        </div>                        
+                    }
+                    else
+                    {
+                        <div>
+                            <input type="radio" asp-for=Gender required name="gender" value="Мужской" /> Мужской
+                            <input type="radio" asp-for=Gender required name="gender" value="Женский" checked /> Женский
+                        </div>
+                    }
+                }              
+            </div>
+        </div>
+        <div class="add-player__form-date">
+            <div>Дата рождения:</div>
+            <input type="date" asp-for=BirthDate required/>
+        </div>
+        <div class="add-player__form-team">
+            <div>Команда:</div>
+            <div id="SelectTeamWrapper">
+                <input type="button" class="add-player__form-team-button btn btn-link" id="SwitchTeamType" value="Нет в списке?"/>
+                <select asp-for=Team required id="SelectTeamInput">
+                    @foreach (var e in ViewBag.Teams)
+                    {
+                        <option>@e</option>
+                    }
+                </select>
+            </div>     
+        </div>
+        <div class="add-player__form-country">
+            <div>Страна:</div>
+            <select asp-for=Country required>
+                <option>Россия</option>
+                <option>США</option>
+                <option>Италия</option>
+            </select>
+        </div> 
+        <input class="add-player__form-submit" type="submit" asp-controller="Players" asp-action="Edit" />
+    </form>
+</div>

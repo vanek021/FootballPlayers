@@ -1,0 +1,60 @@
+﻿@using FootballPlayers.ViewModels
+
+@{
+    ViewData["Title"] = "Football Players";
+}
+
+@model AddPlayerViewModel
+
+<div class="page-description">
+    <div class="page-description__title">
+        Добавить футболиста
+    </div>
+    <div class="page-description__subtitle">
+        Знаете футболиста, но его еще нет в списке? Исправьте это, заполнив форму ниже:
+    </div>
+</div>
+<div class="add-player">
+    <form class="add-player__form" method="post">
+        <div class="add-player__form-name">
+            <div>Имя:</div>
+            <input type="text" asp-for=Name required placeholder="Введите имя.."/>
+        </div>
+        <div class="add-player__form-surname">
+            <div>Фамилия:</div>
+            <input type="text" asp-for=Surname required placeholder="Введите фамилию.."/>
+        </div>
+        <div class="add-player__form-gender">
+            <div>Пол:</div>
+            <div>
+                <input type="radio" asp-for=Gender required name="gender" value="Мужской" /> Мужской
+                <input type="radio" asp-for=Gender required name="gender" value="Женский" /> Женский
+            </div>
+        </div>
+        <div class="add-player__form-date">
+            <div>Дата рождения:</div>
+            <input type="date" asp-for=BirthDate required/>
+        </div>
+        <div class="add-player__form-team">
+            <div>Команда:</div>
+            <div id="SelectTeamWrapper">
+                <input type="button" class="add-player__form-team-button btn btn-link" id="SwitchTeamType" value="Нет в списке?"/>
+                <select asp-for=Team required id="SelectTeamInput">
+                    @foreach (var e in ViewBag.Teams)
+                    {
+                        <option>@e</option>
+                    }
+                </select>
+            </div>     
+        </div>
+        <div class="add-player__form-country">
+            <div>Страна:</div>
+            <select asp-for=Country required>
+                <option>Россия</option>
+                <option>США</option>
+                <option>Италия</option>
+            </select>
+        </div> 
+        <input class="add-player__form-submit" type="submit" asp-action="AddPlayer" />
+    </form>
+</div>
